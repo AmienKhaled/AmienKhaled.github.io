@@ -94,8 +94,8 @@ analytics:
 # Site Author
 author:
   name             : "Amien Khaled"
-  avatar           : "images/profile/avatar/jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Tech addict 🧠."
+  avatar           : "images/profile/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Tech and Phtography addict🧠."
   location         : "Cairo, EG"
   email            :
   links:
