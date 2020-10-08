@@ -16,4 +16,12 @@ tags:
 toc: true
 toc_sticky: true
 ---
+<style>
+.page__title{
+  dir:rtl
+}
+.page__lead{
+  dir:rtl
+}
+</style>
 hi !
