@@ -6,3 +6,13 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+$paragraph-indent: true;
+
+
+.page__title{
+  dir:rtl
+}
+.page__lead{
+  dir:rtl
+}
