@@ -13,5 +13,5 @@ toc: true
 toc_sticky: true
 toc_label: "Make Your Own CBOW"
 classes: wide
-header: './'
+header: './images/2020-10-09-Make-Your-Own-CBOW/header.png'
 ---
