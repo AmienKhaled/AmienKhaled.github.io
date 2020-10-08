@@ -7,12 +7,12 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-$paragraph-indent: true;
+// $paragraph-indent: true;
 
 
 .page__title{
-  dir:rtl
+  direction: rtl
 }
 .page__lead{
-  dir:rtl
+  direction: rtl
 }
