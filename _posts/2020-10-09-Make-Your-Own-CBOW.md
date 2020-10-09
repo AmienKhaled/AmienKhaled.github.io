@@ -16,7 +16,7 @@ toc: true
 toc_sticky: true
 ---
 <style>
-.wrapper, .toc__menu{
+.wrapper, .toc__menu, table{
   direction: rtl;
 }
 p {
@@ -89,7 +89,6 @@ p {
 أنا-أحب-تعلم-البرمجة-تفتح-أفق-جديدة-للعالم-تطوير-تطبيقات   
 </div>
 
-{: .text-right}
 | الكلمة      | الرقم |
 | ----------- | ----------- |
 | أنا      | 1       |
