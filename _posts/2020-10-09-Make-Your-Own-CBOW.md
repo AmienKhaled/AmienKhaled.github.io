@@ -19,9 +19,10 @@ toc_sticky: true
 .wrapper, .toc__menu{
   direction: rtl;
 }
-.arabic {
-    direction: rtl;
-    }
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
 </style>
 
 {: .text-right}
