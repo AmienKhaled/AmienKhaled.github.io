@@ -16,7 +16,7 @@ toc: true
 toc_sticky: true
 ---
 <style>
-.wrapper{
+.wrapper, .toc__menu{
   direction: rtl;
 }
 .arabic {
