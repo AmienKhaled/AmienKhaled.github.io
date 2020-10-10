@@ -185,3 +185,28 @@ p {
 كيف يمكننا حسابها ؟ فبالطبع لن نرسم محاور ونضع كل كلمة على تلك المحاور ، وهنا ياتي دول الDeep learning ، سنتعرف في الفقرات القادمة على الشهر الطرق المستخدمة لحساب تلك المتجهات
 </p>
 
+{: .text-right}
+## الطرق المختلفة حصول على ال Word Embeddings
+<p dir='rtl'>
+والان بعد ان تعرفنا على الفكرة الاساسية التي تعتمد عليها ال word embeddings 
+كيف يمكننا حسابها ؟ فبالطبع لن نرسم محاور ونضع كل كلمة على تلك المحاور ، وهنا ياتي دول الDeep learning ، سنتعرف في الفقرات القادمة على الشهر الطرق المستخدمة لحساب تلك المتجهات
+</p>
+
+{: .text-right}
+### طرق بسيطة
+
+- Word2Vec (Google, 2013)
+  - Continuous bag-of-word (CBOW)
+  - Continuous Skip-gram/Skip-gram with negative sampling (SGNS)
+
+- Global Vectors (GLoVe) (Stanford, 2014)
+
+- fastText (Facebook, 2016)
+  - المميز في هذهة الطريقة انها تستطيع حساب متجهات لكلمات لم تراها من قبل لانها تعمل على الحروف بدلاً عن الكلمات
+
+
+{: .text-right}
+### طرق أكثر تعقيداً
+- Bidirectional Encoder Representations from Transformers (BERT) (Goole, 2018)
+- Embeddings from Language Models (ELMo) (Allen Institute for AI, 2018)
+- Generative Pretrained Transformer 2 (GPT-2) (OpenAI, 2018)
