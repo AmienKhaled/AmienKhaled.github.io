@@ -193,7 +193,23 @@ p {
 </p>
 
 {: .text-right}
-### طرق بسيطة
+### 1- طرق بسيطة 
+
+<p dir='rtl'>
+المشترك في هذة الطرق الثلاثة ان كل كلمة لها متجه واحد فقط بغض النظر عن موقع الكلمة في الجملة (كمثال: رأيت عين ما)   
+</p>
+
+<div dir='rtl' class='notice--success'>
+1- رأيت عين ماء في الصحراء
+<br>
+2- يوجد للذبابة أكثر من عين
+<br>
+<br>
+</div>
+
+<p dir='rtl'>
+معنى كلمة "عين" في الجملة الاولى تختلف عن معني "عين" في الجملة الثانية ولكن لهما نفس قيمة المتجه  
+</p>
 
 - Word2Vec (Google, 2013)
   - Continuous bag-of-word (CBOW)
@@ -206,7 +222,12 @@ p {
 
 
 {: .text-right}
-### طرق أكثر تعقيداً
-- Bidirectional Encoder Representations from Transformers (BERT) (Goole, 2018)
-- Embeddings from Language Models (ELMo) (Allen Institute for AI, 2018)
-- Generative Pretrained Transformer 2 (GPT-2) (OpenAI, 2018)
+### 2- طرق أكثر تعقيداً
+
+<p dir='rtl'>
+المشترك في هذهة الطرق الثلاثة ان حساب المتجه للكلمة متغير بحسب معناها في الجملة، فإذا طبقنا على الثال السابق ، سيصبح لكلمة "عين" في الجملتين متجهين مختلفين 
+</p>
+
+- BERT (Goole, 2018)
+- ELMo (Allen Institute for AI, 2018)
+- GPT-2 (OpenAI, 2018)
