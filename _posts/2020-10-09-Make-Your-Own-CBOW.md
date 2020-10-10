@@ -200,10 +200,9 @@ p {
 </p>
 
 <div dir='rtl' class='notice--success'>
-1- رأيت عين ماء في الصحراء
+١- رأيت عين ماء في الصحراء
 <br>
-2- يوجد للذبابة أكثر من عين
-<br>
+٢- يوجد للذبابة أكثر من عين
 <br>
 </div>
 
@@ -231,3 +230,4 @@ p {
 - BERT (Goole, 2018)
 - ELMo (Allen Institute for AI, 2018)
 - GPT-2 (OpenAI, 2018)
+
