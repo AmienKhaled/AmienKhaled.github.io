@@ -250,10 +250,7 @@ CBOW هو طريقة نستطيع بها حساب ال Word emmbeddings ، وت�
 قيجب ان يختار ال model هنا كلمة كلب 
 </p>
 
-
 ![words line](/images/2020-10-09-Make-Your-Own-CBOW/context.png)
-
-
 
 
 
