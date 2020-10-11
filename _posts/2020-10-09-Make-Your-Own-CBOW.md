@@ -491,7 +491,7 @@ for file_path in files_paths:
 
     f = open(file_path, 'r', encoding='utf-8')
     for line in f :
-        text = remove_diacritics(text)
+        text = remove_diacritics(line)
         text = normalize_arabic(text)
         text = get_arabic_and_full_stop(text)
         data += text
