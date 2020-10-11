@@ -490,6 +490,7 @@ files_paths = [ os.path.join(path, name) for path, subdirs, files in os.walk(roo
 for file_path in files_paths:
 
     f = open(file_path, 'r', encoding='utf-8')
+    
     for line in f :
         text = remove_diacritics(line)
         text = normalize_arabic(text)
