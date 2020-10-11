@@ -257,10 +257,10 @@ CBOW هو طريقة نستطيع بها حساب ال Word emmbeddings ، وت�
 </p>
 <div dir='rtl' class='notice--success'>
 كما هو موضح بالصورة ال (context half-size) يساوي 2، لحساب ال (windows size)، نستخدم المعادلة  بالاعلى   
-$$2*5+1=5$$
+$$window_size=2*5+1=5$$
 </div>
 
-![words line](/images/2020-10-09-Make-Your-Own-CBOW/context.png)
+![words line](/images/2020-10-09-Make-Your-Own-CBOW/cbow_ele.png)
 
 
 
