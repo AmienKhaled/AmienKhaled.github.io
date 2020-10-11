@@ -416,8 +416,45 @@ print(normalize_arabic(text))
 'احب لعب كره القدم وكره السله'
 ```
 
+### ٣- النصوص المختلطة
+{: .ara}
+<p dir='rtl'>
+تكون النصوص العربية احيانا بها حروف وعلامات ترقيم واحيانا بها ابجديات من لغات اخرى. لذلك هن سنستخدم المكتبة re لنستخرج فقط الحروف العربية والنقطة
+</p>
 
-### ٢- شكل النصوص
+![words line](/images/2020-10-09-Make-Your-Own-CBOW/arabic_rep.png)
+
+<p dir='rtl'>
+اذا استخدمنا الجدول بالصورة لنعرف الكود المقابل للحروف العربية، سنرى انها تقع بين الحرفين (ء-ي) اي بين الكود (0621-064A)
+</p>
+
+```python
+def get_arabic_and_full_stop(text):
+    text = re.findall(r'[\u0621-\u064a]+|\.', text)
+    return text
+```
+<p dir='rtl'>
+مثال
+</p>
+
+```python
+text = 'أحب قيادة السيارات من نوع BMW M850 .'
+print(get_arabic_and_full_stop(text))
+```
+<p dir='rtl'>
+النتيجة
+</p>
+
+```python
+['أحب', 'قيادة', 'السيارات', 'من', 'نوع', '.']
+```
+
+<p dir='rtl'>
+سنضع كل النصوص التي عالجناها في هيئة list بحيث يسهل التعامل معها، واستخراج ال (center words) و (context words), وتحويهل الي الشكل المطلوب
+</p>
+
+
+### ٤- نوع النصوص المستخدمة في التدريب (Dataset)
 {: .ara}
 
 <p dir='rtl'>
@@ -439,7 +476,20 @@ print(normalize_arabic(text))
 │       └───Sports
 ```
 
+```python
+data = []
+root = '.\\data'
 
+files_paths = [ os.path.join(path, name) for path, subdirs, files in os.walk(root) for name in files]
+
+for file_path in files_paths:
+
+    f = open(file_path, 'r', encoding='utf-8')
+    for line in f :
+        data += re.findall(r'[\u0600-\u06FF]+|\.', normalize_arabic(line))
+        
+    f.close()
+```
 
 
 
