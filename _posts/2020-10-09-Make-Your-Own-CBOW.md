@@ -229,7 +229,7 @@ p {
 - ELMo (Allen Institute for AI, 2018)
 - GPT-2 (OpenAI, 2018)
 
-{: .text-right}
+{: .ara}
 ## ما هي طريقة ال CBOW 
 <p dir='rtl'>
 CBOW هو طريقة نستطيع بها حساب ال Word emmbeddings ، وتعتمد هذة الطريق على تنبؤ الكلمة من مجموهة الكلمات الحيطة بتلك الكلمة 
