@@ -336,11 +336,85 @@ $$window size=2*5+1=5$$
 
 
 <p dir='rtl'>
-فيهذة المقال سنستخدم فقط الحروف العربية والنقطة، وسنبسط اكثر اللغة اي سنزيل علامات الترقيم، وسنستبدل بعض الحروف التي ستعمل على تكرار كلمات بنفس المعني مثلا (أ-إ-آ) 
+في هذا المقال سنستخدم فقط الحروف العربية والنقطة، وسنبسط اكثر اللغة اي سنزيل علامات الترقيم، وسنستبدل بعض الحروف التي ستعمل على تكرار كلمات بنفس المعني مثلا (أ-إ-آ) 
 </p>
 
 
+### ١- إزالة علامات الترقيم
+{: .ara}
 
+<p dir='rtl'>
+سنستخدم هنا مكتبة re وهي اختصار ل (Regular expression) وهو مفهم مهم جدا يجب تلمه ، لانه يسهل العديد من العمليات على النصوص
+</p>
+
+```python
+import re
+
+arabic_diacritics = re.compile("""
+                             ّ    | # Tashdid
+                             َ    | # Fatha
+                             ً    | # Tanwin Fath
+                             ُ    | # Damma
+                             ٌ    | # Tanwin Damm
+                             ِ    | # Kasra
+                             ٍ    | # Tanwin Kasr
+                             ْ    | # Sukun
+                             ـ     # Tatwil/Kashida
+                         """, re.VERBOSE)
+
+def remove_diacritics(text):
+    text = re.sub(arabic_diacritics, '', text)
+    return text
+```
+
+<p dir='rtl'>
+مثال
+</p>
+
+```python
+text = 'هَلْ غَادَرَ الشُّعَرَاءُ منْ مُتَـرَدَّمِ'
+print(remove_diacritics(text))
+```
+<p dir='rtl'>
+النتيجة
+</p>
+
+```python
+'هل غادر الشعراء من متردم'
+```
+
+### ٢- تبسيط حروف اللغة
+{: .ara}
+
+<p dir='rtl'>
+هنا سنستبدل الحروف التي يمكن كتابتها باكثر من شكل واستبدالها بشكل واحد فقط للتبسيط مثل    te (إ-أ-آ) سنستبدله ب [ا]
+</p>
+
+```python
+def normalize_arabic(text):
+    text = re.sub("[إأآا]", "ا", text)
+    text = re.sub("ى", "ي", text)
+    text = re.sub("ة", "ه", text)
+    text = re.sub("گ", "ك", text)
+    text = re.sub("وال", "و ال", text)
+    return text
+```
+
+<p dir='rtl'>
+مثال
+</p>
+
+```python
+text = 'أحب لعب كرة القدم وگرة السلة'
+print(normalize_arabic(text))
+```
+<p dir='rtl'>
+النتيجة
+</p>
+
+```python
+'احب لعب كره القدم وكره السله'
+```
 
 
 
