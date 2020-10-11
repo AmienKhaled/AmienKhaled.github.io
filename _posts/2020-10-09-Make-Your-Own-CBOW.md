@@ -476,18 +476,25 @@ print(get_arabic_and_full_stop(text))
 │       └───Sports
 ```
 
+<p dir='rtl'>
+بعد ان عرفنا كيف سنعالج النصوص ، لنضع الآن كل ماتعلمناه سابقا، لنفتح الملفات ونعالج النصوص
+</p>
+
 ```python
 data = []
 root = '.\\data'
-
+# get all files
 files_paths = [ os.path.join(path, name) for path, subdirs, files in os.walk(root) for name in files]
 
+# loop over files and process them, then append them to the data list
 for file_path in files_paths:
 
     f = open(file_path, 'r', encoding='utf-8')
     for line in f :
-        data += re.findall(r'[\u0600-\u06FF]+|\.', normalize_arabic(line))
-        
+        text = remove_diacritics(text)
+        text = normalize_arabic(text)
+        text = get_arabic_and_full_stop(text)
+        data += text
     f.close()
 ```
 
