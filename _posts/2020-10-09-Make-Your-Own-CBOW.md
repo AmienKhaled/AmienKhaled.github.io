@@ -490,7 +490,7 @@ files_paths = [ os.path.join(path, name) for path, subdirs, files in os.walk(roo
 for file_path in files_paths:
 
     f = open(file_path, 'r', encoding='utf-8')
-    
+
     for line in f :
         text = remove_diacritics(line)
         text = normalize_arabic(text)
@@ -499,13 +499,39 @@ for file_path in files_paths:
     f.close()
 ```
 
+<p dir='rtl'>
+والآن بعد حولنا جميع النصوص ووضعناها في list يجب علينا الآن ان نحولها ما شرحنا في هذهة  الخطوة   
+<a href="#شكل-ال-dataset"> شكل ال Dataset</a> ولكن تحويلهاوتخزينها في الذكرة هكذا لن يون عملي حيث ان عدد الكلمات اكثر من 40M لذلك سنستخدم طريقة (Sliding window) او بالعربية إزاحة النافذة   وسنستخدم  ايضا ال generators وهو ميزة رائعة من بايثون ستساعدنا للتعامل مع تلك البيانات الكبيرة، اذا لم تسمع عنها من قبل يجب ان تتعلمها فهي جزء مهم.
+</p>
 
+```python
+def get_windows(words, c):
+    i = c
+    while i < len(words) - c:
+        center_word = words[i]
+        context_words = words[(i-c):i] + words[(i+1):(i+c+1)]
+        yield center_word, context_words
+        i += 1
+```
+<p dir='rtl'>
+مثال
+</p>
 
+```python
+data_generator = get_windows(['أحب', 'قيادة', 'السيارات', 'من', 'نوع', '.'],1)
+for center, context in gen :
+    print(f'{center}\t{context}')
+```
 
+<p dir='rtl'>
+النتيجة
+</p>
 
-
-
-
-
+```python
+قيادة	['أحب', 'السيارات']
+السيارات	['قيادة', 'من']
+من	['السيارات', 'نوع']
+نوع	['من', '.']
+```
 
 
