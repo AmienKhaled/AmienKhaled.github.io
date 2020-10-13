@@ -676,8 +676,61 @@ for center, context in gen :
 
 ![words line](/images/2020-10-09-Make-Your-Own-CBOW/batch_shape.png)
 
+## عملية التعلم
+{: .ara}
 
 
+<p dir='rtl'>
+تنقسم عملية التعلم اللى ثلاث
+</p>
+
+- 1- Forward Propagation
+<p dir='rtl'>
+يتم ادخال البيانات خلال الشبكة والتنبؤ بالناتج
+</p>
+
+<p dir='rtl'>
+قي اول الامر نستخدم قيم عشوائة ل (ًW1, W2)
+</p>
+
+
+```python
+def initialize_model(N,V, random_seed=1):
+
+    np.random.seed(random_seed)
+
+    # W1 has shape (N,V)
+    W1 = np.random.rand(N,V)
+    # W2 has shape (V,N)
+    W2 = np.random.rand(V,N)
+    # b1 has shape (N,1)
+    b1 = np.random.rand(N,1)
+    # b2 has shape (V,1)
+    b2 = np.random.rand(V,1)
+
+    return W1, W2, b1, b2
+```
+
+```python
+def forward_prop(x, W1, W2, b1, b2):
+
+    # Calculate h
+    h = np.dot(W1,x)+b1
+    # Apply the relu on h (store result in h)
+    h = np.maximum(0,h)    
+    # Calculate z
+    z = np.dot(W2,h)+b2
+
+    return z, h
+```
+
+- 2- Cost
+
+<p dir='rtl'>
+قي اول الامر نستخدم قيم عشوائة ل (ًW1, W2)
+</p>
+
+- Backpropagation an gradient descent
 
 
 
