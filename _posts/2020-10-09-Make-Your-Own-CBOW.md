@@ -651,6 +651,8 @@ for center, context in gen :
 - W2 = V*N
 - b2 = V*1
 
+![words line](/images/2020-10-09-Make-Your-Own-CBOW/network_shape.png)
+
 
 <p dir='rtl'>
 ولن عند استخدام ال batch inputs ستتغير الابعاد قليلا ، لتناسب عدد ال batches
@@ -672,8 +674,8 @@ for center, context in gen :
 - b2 = V*m
 - b2 = V*m
 
+![words line](/images/2020-10-09-Make-Your-Own-CBOW/batch_shape.png)
 
-![words line](/images/2020-10-09-Make-Your-Own-CBOW/network_shape.png)
 
 
 
