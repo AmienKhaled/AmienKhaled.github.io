@@ -598,9 +598,12 @@ for center, context in gen :
 
 
 
+<p dir='rtl'>
+الشل النهائي لل Dataset
+</p>
 
-
-
+  
+![words line](/images/2020-10-09-Make-Your-Own-CBOW/final_dataset.png)
 
 
 
