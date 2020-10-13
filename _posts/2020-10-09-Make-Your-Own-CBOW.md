@@ -1,7 +1,7 @@
 ---
-title: "ما هو ال CBOW وكيفية تطويره من الصفر وتطبيقه على اللغة العربية"
-tagline: "في هذا المقال سنتعرف أكثر على طريقة CBOW لصناعة Word2Vec وتطبيقها على اللغة العربية"
-excerpt: "في هذا المقال سنتعرف أكثر على طريقة CBOW لصناعة Word2Vec وتطبيقها على اللغة العربية"
+title: "ما هي ال Word Embeddings ? وماهي طريقة ال CBOW ? وكيفية تطبيقها على اللغة العربية"
+tagline: "في هذا المقال سنتعرف أكثر على طريقة CBOW لصناعة Word Embeddings وتطبيقها على اللغة العربية"
+excerpt: "في هذا المقال سنتعرف أكثر على طريقة CBOW لصناعة Word Embeddings وتطبيقها على اللغة العربية"
 header:
   overlay_image: images/2020-10-09-Make-Your-Own-CBOW/header.png
   teaser: images/2020-10-09-Make-Your-Own-CBOW/header.png
