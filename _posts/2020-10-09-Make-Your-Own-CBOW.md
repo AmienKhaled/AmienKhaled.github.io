@@ -981,19 +981,15 @@ iters: 20 cost: 0.002689
 <li><a href='https://www.coursera.org/learn/probabilistic-models-in-nlp'>
 كورس للتعلم
 </a></li>
-
-<ul>
 <li><a href='https://arxiv.org/pdf/1301.3781v3.pdf'>
 الورقة البحثية لل CBOW
 </a></li>
 
-<ul>
 <li><a href='https://aliabdelaal.github.io/blog/gradient-descent-family/'>
 Gradient Descent
 </a></li>
 
 
-<ul>
 <li>
 <a href=''>
 جميع الاكواد المستخدمة
