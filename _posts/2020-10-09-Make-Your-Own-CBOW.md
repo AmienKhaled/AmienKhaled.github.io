@@ -673,6 +673,7 @@ for center, context in gen :
 - b2 = V*m
 
 
+![words line](/images/2020-10-09-Make-Your-Own-CBOW/network_shape.png)
 
 
 
