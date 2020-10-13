@@ -558,12 +558,43 @@ for center, context in gen :
 أحب - قيادة - السيارات - و - الدراجات
 ```
 
+<p dir='rtl'>
+بد تحويلها ستون بهذا الشكل
+</p>
+
 ![words line](/images/2020-10-09-Make-Your-Own-CBOW/one_hot.png)
 
+<p dir='rtl'>
+جيد بد حولنا الكلمات في النصوص الي one-hot vectors كيف شكل المدخلات (Cotext words) التي حولناعا الي ال model للتعلم، لنفترض ان لدين هذا المدخل
+</p>
 
+```python
+['احب', 'السيارات']
+```
 
+<p dir='rtl'>
+لتحويله الي vector واد فقط بدلا من اربعة، سنجنمع قيم ال vectors ثم نقسمها على عددها، لتصبح بذلك الشكل
+</p>
 
+![words line](/images/2020-10-09-Make-Your-Own-CBOW/average.png)
 
+<p dir='rtl'>
+ولتحويل ال (Center word) لن نحتاج لهذا ، فهي كلمة واحدة
+</p>
+
+<p dir='rtl'>
+مثال : ال (center words) للمثال بالاعلى
+</p>
+
+```python
+'قيادة'
+```
+
+<p dir='rtl'>
+وقيمة المتجه الخاص بهل لن تتغير
+</p>
+
+![words line](/images/2020-10-09-Make-Your-Own-CBOW/center_words.png)
 
 
 
