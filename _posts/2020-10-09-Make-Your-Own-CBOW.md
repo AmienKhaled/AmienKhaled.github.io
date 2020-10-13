@@ -599,11 +599,84 @@ for center, context in gen :
 
 
 <p dir='rtl'>
-الشل النهائي لل Dataset
+الشكل النهائي لل Dataset
 </p>
 
   
 ![words line](/images/2020-10-09-Make-Your-Own-CBOW/final_dataset.png)
+
+
+
+
+## الهيكل البنائي لل model الخاص بال CBOW
+{: .ara}
+
+
+
+<p dir='rtl'>
+يتكون ال momdel باستخدام ما يعرف بال (Shallow neural networks) او الشبكات التي تتون من عدد صغي جدا من الطبقات (layers)،
+</p>
+
+<p dir='rtl'>
+ستكون هنا الشكبة الخاصة بال CBOW من ثلاثة مراحل (layers) فقط. المرحلة الاولى ستكون للمدخلات (input layer)، والمرحلة الثانية او الداخلية (hidden layers)، والمرحلةالثالثة للمخرجات (output layer).
+</p>
+
+
+<p dir='rtl'>
+عدد العصبونات (node or neurons) في المرحلة الاولى والاخيرة سيكون متساوى ، حيث انها ستساوي عدد الكلمات بدون تكرار في ال (dataset)
+</p>
+
+
+
+<p dir='rtl'>
+بالنسبة للمحلة الثانية سيكون عدد العصبونات فيها اختياري كما شرحنا سابقا،
+</p>
+
+<p dir='rtl'>
+الابعاد الخاصة بكل مرحلة
+</p>
+
+
+- Vocabulary size = V
+- input layer = V*1
+- output layer = V*1
+- hidden layer = N*1
+
+<p dir='rtl'>
+من تلك الابعاد يكمن استنتاج الابعاد الخاصة بال (weights) وتكون كلاتي
+</p>
+
+- W1 = N*v
+- b1 = N*1
+- W2 = V*N
+- b2 = V*1
+
+
+<p dir='rtl'>
+ولن عند استخدام ال batch inputs ستتغير الابعاد قليلا ، لتناسب عدد ال batches
+</p>
+
+
+- Vocabulary size = V
+- Batch size = m
+- input layer = V*m
+- output layer = V*m
+- hidden layer = N*m
+
+
+<p dir='rtl'>
+هنا لن يتغير الابعد الخاصة ب (W1 , W2)
+</p>
+
+
+- b2 = V*m
+- b2 = V*m
+
+
+
+
+
+
 
 
 
