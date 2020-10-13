@@ -686,11 +686,11 @@ for center, context in gen :
 
 - 1- Forward Propagation
 <p dir='rtl'>
-يتم ادخال البيانات خلال الشبكة والتنبؤ بالناتج
+وهنا يتم ادخال البيانات خلال الشبكة والتنبؤ بالناتج
 </p>
 
 <p dir='rtl'>
-قي اول الامر نستخدم قيم عشوائة ل (ًW1, W2)
+في اول الامر نستخدم قيم عشوائة ل (W1, W2)
 </p>
 
 
@@ -727,14 +727,53 @@ def forward_prop(x, W1, W2, b1, b2):
 - 2- Cost
 
 <p dir='rtl'>
-قي اول الامر نستخدم قيم عشوائة ل (ًW1, W2)
+نحسب ال (cost) او ثمن الالاخطاء الناتجة من ال (forward propagation) ، فالهدف من عملية التدريب هو تقليل هذة الاخطاء قدر الامكان
 </p>
+
+```python
+def compute_cost(y, yhat, batch_size):
+    logprobs = np.multiply(np.log(yhat),y) + np.multiply(np.log(1 - yhat), 1 - y)
+    cost = - 1/batch_size * np.sum(logprobs)
+    cost = np.squeeze(cost)
+    return cost
+```
 
 - Backpropagation an gradient descent
 
+<p dir='rtl'>
+فهذة المرحلة نستخدم ال (Gradient descent) ، لتعديل قيم ال (weights) لتقليل نسبة الخطأ
+</p>
+
+<p dir='rtl'>
+ان كنت لم تسمع عن (Gradient descent) فانصح بقراءة هذة  
+<a href="https://aliabdelaal.github.io/blog/gradient-descent-family/"> المقالة</a>
+</p>
+
+```python
+def back_prop(x, yhat, y, h, W1, W2, b1, b2, batch_size):
+
+    # Re-use it whenever you see W2^T (Yhat - Y) used to compute a gradient
+    l1 = np.dot(W2.T,(yhat-y))
+    # Apply relu to l1
+    l1 = np.maximum(0,l1)
+    # Compute the gradient of W1
+    grad_W1 = (1/batch_size)*np.dot(l1,x.T)    
+    # Compute the gradient of W2
+    grad_W2 = (1/batch_size)*np.dot(yhat-y,h.T)
+    # Compute the gradient of b1
+    grad_b1 = np.sum((1/batch_size)*np.dot(l1,x.T),axis=1,keepdims=True)
+    # Compute the gradient of b2
+    grad_b2 = np.sum((1/batch_size)*np.dot(yhat-y,h.T),axis=1,keepdims=True)
+    
+    return grad_W1, grad_W2, grad_b1, grad_b2
+```
+
+<p dir='rtl'>
+فيمكن تلخيص هذة الملية من خلال الصورة بالاسفل
+</p>
 
 
 
-
+![words line](/images/2020-10-09-Make-Your-Own-CBOW/train_process.png)
 
 
