@@ -873,6 +873,17 @@ iters: 16 cost: 0.003007
 iters: 18 cost: 0.002839
 iters: 20 cost: 0.002689
 ```
+<p dir='rtl'>
+جميع الاكواد المستخدمدة ستجدها 
+
+<a href=''>
+هنا
+</a>
+
+ على حسابي الخاص على github
+</p>
+
+
 ## استخراج ال Word Embeddings
 {: .ara}
 
@@ -893,33 +904,103 @@ iters: 20 cost: 0.002689
 {: .ara}
 
 
+## تقييم كفاءة ال word embeddings
+{: .ara}
+
+
+
+- 1- Intrinsic Evaluation
+
+<p dir='rtl'>
+ينقسم الي قسمين 
+</p>
+
+- 1- Analogies
+<p dir='rtl'>
+ينقسم الي عدة انواع، تعتمد حميعا على المعني الكلمات
+</p>
+
+- a- Semantic analogies
+<p dir='rtl'>
+ويعتمد على المقارانات الدلالية بين الالفاظ ، مثال
+</p>
+
+```python
+ علاقة "باريس" بالنسبة "لفرنسا" ، مثل علاقة "القاهرة" بالنسبة __؟___
+```
+
+- b- Syntactic analogies
+```python
+علاقة كلمة "يلعب" بالنسبة لكلمة "لعب" ،مثل العلاقة بين كلمة "يشاهد" وكلمة __؟__
+```
+
+- 2- Clustering
+<p dir='rtl'>
+نستخدم فيها خوارزمية التجميع (clustering)، لنتختبر مدى تجانس الكلمات
+</p>
+
+- 2- Visualization
+<p dir='rtl'>
+نستخدم هنا الادوات المختلفة لصناعة مخرجات مرئية يمننا من خلالها استنتاج كفاءة ال model
+</p>
+
+
+- 2- Exrinsic Evaluation
+
+<p dir='rtl'>
+تعتمد هنا على استخدام ال (word embeddings) في تطبيقات اخرى في علممعالجة اللغات الطبيعية مثل (NER, Sentiment analysis)
+</p>
+
+<p dir='rtl'>
+ولكن تلك الطريقة بها بعض العيوب وهي استهلاك الكثير من الوقت، وعند حدوث اخطاء لن تستطيع تحديد مكان الخطأ ،  هل هو من الخوارزمية ام من ال word embeddings
+</p>
 
 
 
 
 
 
+<div dir='rtl' class='notice--success'>
+في النهاية اتمنى ان ينال المقال اعجابكم ، لقد حاولت التوفيق بين اللغة العربية والمصطلحات العلمية قدر الامكان ، في حالة وجود اقتراحات او خطأ في المقال سواء كان املائي او غيرة ، برجاء مراسلتي.
+</div>
+
+
+<div dir='rtl' class='notice--success'>
+اللهم علمنا ماينفعنا وانفعنا بما علمتنا انك انت العليم الحكيم
+</div>
 
 
 
+## المصادر
+{: .ara}
 
 
+<div dir='rtl'>
+
+<ul>
+<li><a href='https://www.coursera.org/learn/probabilistic-models-in-nlp'>
+كورس للتعلم
+</a></li>
+
+<ul>
+<li><a href='https://arxiv.org/pdf/1301.3781v3.pdf'>
+الورقة البحثية لل CBOW
+</a></li>
+
+<ul>
+<li><a href='https://aliabdelaal.github.io/blog/gradient-descent-family/'>
+Gradient Descent
+</a></li>
 
 
+<ul>
+<li>
+<a href=''>
+جميع الاكواد المستخدمة
+</a>
+</li>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+</ul>
 
 
 
