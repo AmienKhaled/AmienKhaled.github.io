@@ -769,11 +769,150 @@ def back_prop(x, yhat, y, h, W1, W2, b1, b2, batch_size):
 ```
 
 <p dir='rtl'>
-فيمكن تلخيص هذة الملية من خلال الصورة بالاسفل
+فيمكن تلخيص هذة العملية من خلال الصورة بالاسفل
 </p>
 
 
-
 ![words line](/images/2020-10-09-Make-Your-Own-CBOW/train_process.png)
+
+<p dir='rtl'>
+الان بعد ان انتهينا من المفاهيم الاساسية اللازمة للتطبيق ، لنناقش الان بعض المتغيرات التي سيتوقف عليها نتائج الموديل
+</p>
+
+- ١- عدد كلمات ال (Context words)
+<p dir='rtl'>
+عن تغير هذا المعامل ستتغير الكفاءة النهائية ، سنستخدم هنا  قيمة المعامل ب 2 (C)
+</p>
+
+- ٢- ابعاد ال (word embeddigs) 
+<p dir='rtl'>
+ستستخدم هنا متجه  بشكل (300*1) 
+</p>
+
+- ٣- معامل التعلم 
+<p dir='rtl'>
+ستسنستخدم هنا معامل قيمته .03 وسيقل بمقدار .66 في كل لفة ،
+</p>
+
+- ٤- عدد اللفات
+<p dir='rtl'>
+سنستخدم هنا عدًد اللفات ب 20
+</p>
+
+```python
+def gradient_descent(data, word2Ind, N, V, num_iters, C=2, batch_size=128, alpha=0.03):
+
+    W1, W2, b1, b2 = initialize_model(N,V, random_seed=282)
+    batch_size = batch_size
+    iters = 0
+    C = C
+    for x, y in get_batches(data, word2Ind, V, C, batch_size):
+
+        # Get z and h
+        z, h = forward_prop(x, W1, W2, b1, b2)
+        # Get yhat
+        yhat = softmax(z)
+        # Get cost
+        cost = compute_cost(y, yhat, batch_size)
+        if ( (iters+1) % 2 == 0):
+            print(f"iters: {iters + 1} cost: {cost:.6f}")
+   
+        # Get gradients
+        grad_W1, grad_W2, grad_b1, grad_b2 = back_prop(x, yhat, y, h, W1, W2, b1, b2, batch_size)
+        
+        # Update weights and biases
+        W1 -= alpha*grad_W1 
+        W2 -= alpha*grad_W2
+        b1 -= alpha*grad_b1
+        b2 -= alpha*grad_b2
+        
+        iters += 1 
+        if iters == num_iters: 
+            break
+        if iters % 100 == 0:
+            alpha *= 0.66
+            
+    return W1, W2, b1, b2
+```
+
+```python
+C = 2
+batch_size = 128
+
+# getdict is o=holding the words and its index
+word2Ind = get_dict(data)
+V = len(word2Ind)
+num_iters = 20
+
+print("Call gradient_descent")
+W1, W2, b1, b2 = gradient_descent(data, word2Ind, N, V, num_iters, C, batch_size)
+```
+
+<p dir='rtl'>
+النتيجة
+</p>
+
+```python
+Call gradient_descent
+iters: 2 cost: 14.706067
+iters: 4 cost: 0.004671
+iters: 6 cost: 0.004275
+iters: 8 cost: 0.003942
+iters: 10 cost: 0.003657
+iters: 12 cost: 0.003411
+iters: 14 cost: 0.003196
+iters: 16 cost: 0.003007
+iters: 18 cost: 0.002839
+iters: 20 cost: 0.002689
+```
+## استخراج ال Word Embeddings
+{: .ara}
+
+<p dir='rtl'>
+يوجد ثلاث اختيارات يمكننا بيها استخراج ال word embeddings
+</p>
+
+
+- ١- من خلال W1
+
+
+- ٢- من خلال W2
+
+
+- ٣- من خلال متوسط القيم بين (W1 , W2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
