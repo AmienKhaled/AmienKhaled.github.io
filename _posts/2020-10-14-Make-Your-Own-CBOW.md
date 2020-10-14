@@ -58,7 +58,6 @@ p {
 - **Natural language processing (NLP)** : معالجة اللغات الطبيعية
 - **Gradient descent** : هي الخوارزمية المستخدمة لتحسين الخطأ الناتج من التعلم قدر الإمكان
 - **Deep Learning** : التعلم العميق، وهو فرع من فروع علم الذكاء الاصطناعي
-- **Model**:
 - **Integers**: عدد صحيح
  
 ## مشكلة تمثيل الكلمات
@@ -876,7 +875,7 @@ iters: 20 cost: 0.002689
 <p dir='rtl'>
 جميع الاكواد المستخدمة ستجدها
 
-<a href=''>
+<a href='https://github.com/AmienKhaled/CBOW-For-Arabic-Language'>
 هنا
 </a>
 
@@ -1025,7 +1024,7 @@ Gradient Descent
 
 
 <li>
-<a href=''>
+<a href='https://github.com/AmienKhaled/CBOW-For-Arabic-Language'>
 جميع الاكواد المستخدمة
 </a>
 </li>
