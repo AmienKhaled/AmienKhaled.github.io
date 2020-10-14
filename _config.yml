@@ -63,7 +63,7 @@ google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
 # SEO Related
-google_site_verification :
+google_site_verification : KyURe-xDwFUACbWuLKAv6oiBMwZ6v1AEap4Ge2_gxDk
 bing_site_verification   :
 yandex_site_verification :
 naver_site_verification  :
@@ -289,3 +289,5 @@ defaults:
 
 head_scripts:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML
+
+ 
