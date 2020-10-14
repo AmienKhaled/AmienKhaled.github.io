@@ -3,7 +3,7 @@ title: "ما هي ال Word Embeddings ? وماهي طريقة ال CBOW ? وك�
 tagline: "في هذا المقال سنتعرف أكثر على طريقة CBOW لصناعة Word Embeddings وتطبيقها على اللغة العربية"
 excerpt: "في هذا المقال سنتعرف أكثر على طريقة CBOW لصناعة Word Embeddings وتطبيقها على اللغة العربية"
 header:
-  overlay_image: images/2020-10-09-Make-Your-Own-CBOW/header.png
+  overlay_image: images/2020-10-14-Make-Your-Own-CBOW/header.png
   teaser: images/2020-10-09-Make-Your-Own-CBOW/header.png
 categories:
   - Blog
